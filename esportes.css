@@ -9,6 +9,7 @@ table{
     border-color: black;
     border-style: solid;
     font-size: 20px;
+    text-align: center;
 }
 
 table th{
