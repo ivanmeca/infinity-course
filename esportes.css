@@ -1,12 +1,29 @@
 
-section{
-    align-self: center;
+section label{
+    background-color: yellow;
+    font-size: 40px;
+    border-radius: 15px;
 }
 
 table{
     border-color: black;
     border-style: solid;
+    font-size: 20px;
 }
+
+table th{
+    border-bottom: 1px solid black;
+}
+
+table tr td{
+    border-bottom: 1px dashed black;
+}
+
+table tr td:nth-child(1){
+    background-color: gray;
+    padding: 10px;
+}
+
 
 table img{
     border-radius: 5px;
