@@ -1,3 +1,12 @@
 h1 {
     color: green;
 }
+
+
+ul li:nth-child(even){
+    color: blue;
+}
+
+ul li:nth-child(2n+1){
+    color: red;
+}
