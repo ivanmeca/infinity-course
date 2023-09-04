@@ -4,6 +4,10 @@
 /*}*/
 
 
+main{
+    text-align: center;
+}
+
 section{
     display: flex;
     align-items: center;
