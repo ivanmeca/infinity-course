@@ -1,13 +1,19 @@
-h1 {
-    /*background-size: 50%;*/
-    color: green;
+
+div {
+    /*display: flex;*/
+    border: 5px solid black;
 }
 
-
-ul li:nth-child(even){
-    color: blue;
+div.pessoa{
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
 }
 
-ul li:nth-child(2n+1){
-    color: red;
+div.image{
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
 }
