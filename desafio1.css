@@ -1,19 +1,43 @@
 
-div {
-    /*display: flex;*/
-    border: 5px solid black;
+/*div {*/
+/*    border: 5px solid black;*/
+/*}*/
+
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*visibility: hidden;*/
 }
+
+section:hover{
+    border: 1px dashed red;
+    /*visibility: visible;*/
+}
+
 
 div.pessoa{
-    width: 50%;
-    float: left;
-    padding: 20px;
-    border: 2px solid red;
+    display: flex;
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 100%;
+    margin: 20px;
 }
 
-div.image{
-    width: 50%;
-    float: left;
-    padding: 20px;
-    border: 2px solid red;
+
+
+
+div.pessoa img{
+    width: 100px;
+    height: 100px;
+}
+
+
+div.pessoa div{
+    flex: 1;
+}
+
+div.pessoa div:first-child{
+    margin-left: 10px;
 }
