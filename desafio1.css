@@ -16,7 +16,8 @@ section{
 }
 
 section:hover{
-    border: 1px dashed red;
+    box-shadow: gray;
+    /*border: 1px dashed white;*/
     /*visibility: visible;*/
 }
 
@@ -29,8 +30,10 @@ div.pessoa{
     margin: 20px;
 }
 
-
-
+div.pessoa:hover{
+    /*background-color: gray;*/
+    box-shadow: 10px 5px 5px black;;
+}
 
 div.pessoa img{
     width: 100px;
