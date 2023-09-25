@@ -11,23 +11,21 @@
 </div>
 </body>
 <script>
-    let valor = 0;
+    let valor = "nan";
 
-    function Fatorial(number){
-        if( number > 1){
-            return number * Fatorial(number-1)
+    function Fatorial(number) {
+        if (number > 1) {
+            return number * Fatorial(number - 1)
         }
         return 1
     }
 
-    while (true){
+    while (isNaN(valor)) {
+        alert('Digite um número válido')
         valor = prompt("Digite o numero:");
-        if (isNaN(valor)) {
-            alert('Digite um número válido')
-            continue;
-        }
-        alert('O resultado é '+Fatorial(valor))
-        break;
-    };
+    }
+
+    alert('O resultado é ' + Fatorial(valor))
+
 </script>
 </html>
