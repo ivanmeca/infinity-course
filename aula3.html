@@ -11,20 +11,21 @@
 </div>
 </body>
 <script>
-    let valor = "nan";
-
-    function Fatorial(number) {
-        if (number > 1) {
-            return number * Fatorial(number - 1)
+    function fillScreen(){
+        itens = ["a","b","c","d","e","f","g","h","i","j","k","l"]
+        tela =  document.getElementById("saida");
+        for (let i = 0; i < itens.length; i++) {
+            let my_checkbox = document.createElement("input");
+            my_checkbox.type = "checkbox"
+            my_checkbox.id = "checkbox_"+itens[i]
+            my_checkbox.name = "checkbox_"+itens[i]
+            label = document.createElement("label")
+            label.setAttribute("for",my_checkbox.name)
+            label.innerHTML = "checkbox_"+itens[i]
+            tela.insertAdjacentElement("beforebegin", my_checkbox);
+            tela.insertAdjacentElement("beforebegin", label);
         }
-        return 1
     }
-
-    while (isNaN(valor)) {
-        valor = prompt("Digite um número válido:");
-    }
-
-    alert('O resultado é ' + Fatorial(valor))
-
+    fillScreen();
 </script>
 </html>
