@@ -11,20 +11,28 @@
 </div>
 </body>
 <script>
+    function fillCurrentItem(item){
+        let my_checkbox = document.createElement("input");
+        my_checkbox.type = "checkbox"
+        my_checkbox.id = "checkbox_"+item
+        my_checkbox.name = "checkbox_"+item
+        label = document.createElement("label")
+        label.setAttribute("for",my_checkbox.name)
+        label.innerHTML = item
+        tela.insertAdjacentElement("beforebegin", my_checkbox);
+        tela.insertAdjacentElement("beforebegin", label);
+    }
+
     function fillScreen(){
         itens = ["a","b","c","d","e","f","g","h","i","j","k","l"]
         tela =  document.getElementById("saida");
+        // For normal, usando a posiçao atual do array para recuperar o item
         for (let i = 0; i < itens.length; i++) {
-            let my_checkbox = document.createElement("input");
-            my_checkbox.type = "checkbox"
-            my_checkbox.id = "checkbox_"+itens[i]
-            my_checkbox.name = "checkbox_"+itens[i]
-            label = document.createElement("label")
-            label.setAttribute("for",my_checkbox.name)
-            label.innerHTML = "checkbox_"+itens[i]
-            tela.insertAdjacentElement("beforebegin", my_checkbox);
-            tela.insertAdjacentElement("beforebegin", label);
+            fillCurrentItem(itens[i])
         }
+        tela.insertAdjacentHTML("beforebegin","<hr>")
+        // Foreach, lendo o array com uma funcao de tratamento
+        itens.forEach(fillCurrentItem)
     }
     fillScreen();
 </script>
