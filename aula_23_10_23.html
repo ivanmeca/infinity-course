@@ -44,7 +44,7 @@
 </body>
 <script>
 
-    const fieldsForm1 = ["nome", "senha", "endereco","campo1","campo2","campo3","campo4","campo5","campo6","campo7","campo8"];
+    const fieldsForm1 = ["#nome", " label [for=\${item}"]", "endereco","campo1","campo2","campo3","campo4","campo5","campo6","campo7","campo8"];
 
     form = document.querySelector('#form1')
     form.addEventListener("submit", (e) => VerificaCampos(e,fieldsForm1))
@@ -56,10 +56,11 @@
     function VerificaCampos(e,fields) {
         e.preventDefault()
         let formOk = true
-        fields.map((item) =>{
+        fields.forEach((item) =>{
             formValue = e.target.querySelector('#'+item).value
-            if(formValue === ""){
+            if(!formValue){
                 formOk = false
+                nomeDoCampo = e.target.querySelector(`label [for="${item}"]`)
                 alert(`Por favor preencha o campo ${item}`)
             }
         })
