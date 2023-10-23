@@ -1,16 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <form>
-        <input type="text">Digite o nome</input>
-        <input type="text">Digite o nome</input>
-        <input type="text">Digite o nome</input>
-        <input type="text">Digite o nome</input>
-    </form>
 </head>
 <body>
+<form>
+    <label for="nome">Digite o nome</label>
+    <input id="nome" type="text">
+    <label for="senha">Digite o nome</label>
+    <input id="senha" type="password">
+    <label for="endereco">Digite o nome</label>
+    <input id="endereco" type="text">
 
+
+
+    <label for="campo1">Digite o nome</label>
+    <input id="campo1" type="text">
+    <label for="campo2">Digite o nome</label>
+    <input id="campo2" type="text">
+    <label for="campo3">Digite o nome</label>
+    <input id="campo3" type="text">
+    <label for="campo4">Digite o nome</label>
+    <input id="campo4" type="text">
+    <label for="campo5">Digite o nome</label>
+    <input id="campo5" type="text">
+    <label for="campo6">Digite o nome</label>
+    <input id="campo6" type="text">
+    <label for="campo7">Digite o nome</label>
+    <input id="campo7" type="text">
+    <label for="campo8">Digite o nome</label>
+    <input id="campo8" type="text">
+
+
+
+
+
+
+    <button>Fazer pedido</button>
+</form>
 </body>
+<script>
+
+    form = document.querySelector('form')
+    form.addEventListener("submit",VerificaCampos)
+
+    function VerificaCampos(e) {
+        e.preventDefault()
+        const fields = ["nome", "senha", "endereco","campo1","campo2","campo3","campo4","campo5","campo6","campo7","campo8"];
+        let formOk = true
+        fields.map((item) =>{
+            formValue = e.target.querySelector('#'+item).value
+            if(formValue === ""){
+                formOk = false
+                alert(`Por favor preencha o campo ${item}`)
+            }
+        })
+        if (formOk){
+            alert("Cadastro realizado")
+        }
+    }
+</script>
 </html>
