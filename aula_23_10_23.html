@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<form>
+<form id="form1">
     <label for="nome">Digite o nome</label>
     <input id="nome" type="text">
     <label for="senha">Digite o nome</label>
@@ -31,23 +31,30 @@
     <input id="campo7" type="text">
     <label for="campo8">Digite o nome</label>
     <input id="campo8" type="text">
-
-
-
-
-
-
     <button>Fazer pedido</button>
 </form>
+<form id="form2">
+    <label for="nome2">Digite o nome</label>
+    <input id="nome2" type="text">
+    <button>Fazer pedido</button>
+</form>
+
+
+
 </body>
 <script>
 
-    form = document.querySelector('form')
-    form.addEventListener("submit",VerificaCampos)
+    const fieldsForm1 = ["nome", "senha", "endereco","campo1","campo2","campo3","campo4","campo5","campo6","campo7","campo8"];
 
-    function VerificaCampos(e) {
+    form = document.querySelector('#form1')
+    form.addEventListener("submit", (e) => VerificaCampos(e,fieldsForm1))
+
+    const fieldsForm2 = ["nome2"];
+    form = document.querySelector('#form2')
+    form.addEventListener("submit", (e) => VerificaCampos(e,fieldsForm2))
+
+    function VerificaCampos(e,fields) {
         e.preventDefault()
-        const fields = ["nome", "senha", "endereco","campo1","campo2","campo3","campo4","campo5","campo6","campo7","campo8"];
         let formOk = true
         fields.map((item) =>{
             formValue = e.target.querySelector('#'+item).value
