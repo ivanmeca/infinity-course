@@ -1,18 +1,29 @@
-
-body{
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-h1{
-
-}
-
-.container{
+body {
+    min-height: 100vh;
+    background-color: rgb(151, 204, 250);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 5rem;
 }
 
-.container-cadastro input{
+h1 {
+    font-size: 3rem;
+}
+
+.container-cadastro {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.container-cadastro input {
     width: 25rem;
     padding: 1rem 0.5rem;
     border-radius: 5px;
@@ -20,32 +31,49 @@ h1{
     font-size: 1.2rem;
 }
 
-.container-cadastro button{
+.container-cadastro button {
     width: 7rem;
-    background-color: blue;
+    background-color:  rgb(4, 117, 216);
     color: white;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.53);
     cursor: pointer;
 }
 
-.tarefas{
+.tarefas {
     width: 32.5rem;
 }
 
-.tarefa{
+.tarefa {
+    border-radius: 5px;
     width: 100%;
-    background-color: rgb(4,117,216);
+    background-color: rgb(53, 161, 255);
     display: flex;
+    align-items: center;
     padding: 1.5rem;
     gap: 1rem;
-    align-items: center;
+    margin-bottom: 1rem;
 }
 
-.tarefa input{
+.tarefa input {
     width: 1rem;
 }
 
-.tarefa button{
-    margin-left:auto;
+.tarefa input:checked + p {
+    color: rgb(64, 64, 64);
+    text-decoration: line-through;
+}
+
+.tarefa p {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.tarefa button {
+    margin-left: auto;
+    padding: 0.5rem 1rem;
     cursor: pointer;
     border: none;
     border-radius: 5px;
