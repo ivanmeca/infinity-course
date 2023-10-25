@@ -1,4 +1,9 @@
 
+body{
+
+}
+
+
 h1{
 
 }
@@ -7,10 +12,41 @@ h1{
     display: flex;
 }
 
-.container-cadastro{
+.container-cadastro input{
     width: 25rem;
     padding: 1rem 0.5rem;
     border-radius: 5px;
     outline: none;
     font-size: 1.2rem;
+}
+
+.container-cadastro button{
+    width: 7rem;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+.tarefas{
+    width: 32.5rem;
+}
+
+.tarefa{
+    width: 100%;
+    background-color: rgb(4,117,216);
+    display: flex;
+    padding: 1.5rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+.tarefa input{
+    width: 1rem;
+}
+
+.tarefa button{
+    margin-left:auto;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
 }
