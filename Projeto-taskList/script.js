@@ -4,10 +4,11 @@ const containerTarefas = document.querySelector(".tarefas")
 
 cadastroBtn.addEventListener("click", cadastrarTarefa)
 
-let tarefas = [
+let tarefas = JSON.parse(localStorage.getItem("tarefas"))
+/* [
     {id: 1, nome: "Estudar", completa: false, descricao: "HTML, Js, Ts, CSS"},
     {id: 2, nome: "Lavar a louça", completa: false, descricao: "Para a mãe não bater"},
-]
+] */
 
 let contador = 3;
 
@@ -80,6 +81,8 @@ function cadastrarTarefa() {
 
 function mostrarTarefa(arrayDeTarefas) {
     containerTarefas.innerHTML = ""
+
+    localStorage.setItem("tarefas", JSON.stringify(tarefas))
 
     arrayDeTarefas.forEach(tarefa => {
         const div = document.createElement("div")
