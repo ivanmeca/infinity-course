@@ -16,7 +16,7 @@ function cadastrarPizza(eventoDeSubmit, fields) {
         }
     })
 
-    if(!formOk) {
+    if (!formOk) {
         alert("Preencha todos os campos")
         return;
     }
@@ -25,10 +25,10 @@ function cadastrarPizza(eventoDeSubmit, fields) {
     tr = table.insertRow()
     hora = tr.insertCell()
     hora.innerHTML = new Date(Date.now()).toLocaleString();
-    pegaValores(eventoDeSubmit.target,function (prop,value){
+    pegaValores(eventoDeSubmit.target, function (prop, value) {
         const cell = tr.insertCell()
         cell.innerHTML = value
-    } )
+    })
 }
 
 function pegaValores(form, valueHandler) {
