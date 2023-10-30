@@ -21,9 +21,9 @@ function cadastrarPizza(eventoDeSubmit, fields) {
         return;
     }
 
-    table = document.querySelector("#tabela_pedidos")
-    tr = table.insertRow()
-    hora = tr.insertCell()
+    const table = document.querySelector("#tabela_pedidos")
+    const tr = table.insertRow()
+    let hora = tr.insertCell()
     hora.innerHTML = new Date(Date.now()).toLocaleString();
     pegaValores(eventoDeSubmit.target, function (prop, value) {
         const cell = tr.insertCell()
