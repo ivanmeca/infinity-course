@@ -8,27 +8,26 @@ function cadastrarPizza(eventoDeSubmit, fields) {
     eventoDeSubmit.preventDefault()
     let formOk = true
 
-    fields.forEach(item => {
-        const field = eventoDeSubmit.target[item].value
+    try {
+        fields.forEach(item => {
+            const field = eventoDeSubmit.target[item].value
 
-        if (!field) {
-            formOk = false
-        }
-    })
+            if (!field) {
+                throw Error(`O valor de ${item} é obrigatório`)
+            }
+        })
 
-    if (!formOk) {
-        alert("Preencha todos os campos")
-        return;
+        const table = document.querySelector("#tabela_pedidos")
+        const tr = table.insertRow()
+        let hora = tr.insertCell()
+        hora.innerHTML = new Date(Date.now()).toLocaleString();
+        pegaValores(eventoDeSubmit.target, function (prop, value) {
+            const cell = tr.insertCell()
+            cell.innerHTML = value
+        })
+    } catch(err) {
+        alert(err.message)
     }
-
-    const table = document.querySelector("#tabela_pedidos")
-    const tr = table.insertRow()
-    let hora = tr.insertCell()
-    hora.innerHTML = new Date(Date.now()).toLocaleString();
-    pegaValores(eventoDeSubmit.target, function (prop, value) {
-        const cell = tr.insertCell()
-        cell.innerHTML = value
-    })
 }
 
 function pegaValores(form, valueHandler) {
